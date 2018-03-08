@@ -165,7 +165,7 @@ gh/highlightjs/cdn-release@9.12.0/build/languages/yaml.min.js
         </button>
       </li>
       <li id="login-user">
-        <a href="/user/{{ user.username }}" id="link-mypage"> {{ user }}
+        <a href="/user/{{ user.username }}" id="link-mypage"> {{ user.toSource() }}
           <img src="{{ user|picture }}" class="picture picture-rounded" width="25" /> {{ user.name }}
         </a>
       </li>
