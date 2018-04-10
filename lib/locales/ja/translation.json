@@ -44,6 +44,7 @@
   "View diff": "差分を見る",
 
   "User ID": "ユーザーID",
+  "Home": "ホーム",
   "User Settings": "ユーザー設定",
   "User Information": "ユーザー情報",
   "Basic Info": "ユーザーの基本情報",
@@ -62,6 +63,12 @@
   "Google Setting": "Google設定",
   "Connected": "接続されています",
   "Disconnect": "接続を解除",
+  "Show": "公開",
+  "Hide": "非公開",
+  "Disclose E-mail": "メールアドレスの公開",
+  
+ 
+  
 
   "Create today's": "今日の◯◯を作成",
   "Memo": "メモ",
@@ -76,14 +83,15 @@
   "Table of Contents": "目次",
   "Management Wiki Home": "Wiki管理トップ",
   "App settings": "アプリ設定",
-  "Security settings": "セキュリティ設定",
   "Markdown settings": "Markdown設定",
   "Customize": "カスタマイズ",
   "Notification settings": "通知設定",
   "User management": "ユーザー管理",
+  "External Account management": "外部アカウント管理",
+  "UserGroup management": "グループ管理",
+  "Full Text Search management": "全文検索管理",
   "Basic settings": "基本設定",
   "Basic authentication": "Basic認証",
-  "Password": "パスワード",
   "Guest users access": "ゲストユーザーのアクセス",
   "Register limitation": "登録の制限",
   "The contents entered here will be shown in the header etc": "ここに入力した内容は、ヘッダー等に表示されます。",
@@ -91,6 +99,7 @@
   "Anyone with the link": "リンクを知っている人のみ",
   "Specified users": "特定ユーザーのみ",
   "Just me": "自分のみ",
+  "Only inside the group": "特定グループのみ",
   "Shareable link": "このページの共有用URL",
   "The whitelist of registration permission E-mail address": "登録許可メールアドレスの<br>ホワイトリスト",
   "Selecting authentication mechanism": "認証機構選択",
@@ -145,7 +154,6 @@
   "New password": "新しいパスワード",
   "Re-enter new password": "(確認用)",
   "Password is not set": "パスワードが設定されていません",
-  "You can sign in with email and password": "<code>%s</code> と設定されたパスワードの組み合わせでログイン可能になります。",
 
   "Security settings": "セキュリティ設定",
 
@@ -158,6 +166,7 @@
       "notice": {
           "version": "これは現在の版ではありません。",
           "moved": "このページは <code>%s</code> から移動しました。",
+          "duplicated": "このページは <code>%s</code> から複製されました。",
           "unlinked": "このページへのリダイレクトは削除されました。",
           "restricted": "このページの閲覧は制限されています"
       }
@@ -241,8 +250,8 @@
   },
 
   "app_setting": {
-    "Wiki name": "Wikiの名前",
-    "wiki_change": "ヘッダーやHTMLタイトルに使用されるWikiの名前を変更できます。",
+    "Site Name": "サイト名",
+    "sitename_change": "ヘッダーや HTML タイトルに使用されるサイト名を変更できます。",
     "header_content": "ここに入力した内容は、ヘッダー等に表示されます。",
     "Confidential name": "コンフィデンシャル表示",
     "ex): internal use only": "例: 社外秘",
@@ -267,8 +276,8 @@
     "Plugin settings": "プラグイン設定",
     "Enable plugin loading": "プラグインの読み込みを有効にします。",
     "Load plugins": "プラグインを読み込む",
-    "valid": "有効",
-    "invalid": "無効"
+    "Enable": "有効",
+    "Disable": "無効"
 
    },
 
@@ -288,7 +297,6 @@
     "insert_single":"1行に1メールアドレス入力してください。",
     "Authentication mechanism settings":"認証機構設定"
   },
-
   "markdown_setting": {
     "markdown_rendering": "Markdownレンダリングの設定を変更できます。",
     "validate Line Break": "Line Break を有効にする",
@@ -299,48 +307,45 @@
 
   },
 
-     "customize_page": {
-       "Behavior": "挙動",
-       "Layout": "レイアウト",
-       "Function": "機能",
-       "function_choose": "機能の有効/無効を選択できます。",
-       "Timeline function": "タイムライン機能",
-       "subpage_display": "配下ページのタイムラインを表示できます。",
-       "performance_decrease": "配下ページが多い場合はページロード時のパフォーマンスが落ちます。",
-       "list_page_display": "無効化することでリストページの表示を高速化できます。",
-       "tab_switch":"タブ変更をブラウザ履歴に保存",
-       "save_edit": "編集タブやヒストリータブ等の切り替えをブラウザ履歴に保存し、ブラウザの戻る/進む操作の対象にします。",
-       "by_invalidating": "無効化することで、ページ遷移のみを戻る/進む操作の対象にすることができます。",
-       "Custom CSS": "カスタム CSS",
-        "write_CSS": " システム全体に適用されるCSSを記述できます。",
-        "reflect_change": "変更の反映はページの更新が必要です。",
-        "ctrl_space": "Ctrl+Space でコード補完",
-        "Custom script": "カスタムスクリプト",
-        "write_java": "システム全体に適用されるJavaScriptを記述できます。"
+  "customize_page": {
+    "Behavior": "挙動",
+    "Layout": "レイアウト",
+    "Function": "機能",
+    "function_choose": "機能の有効/無効を選択できます。",
+    "Timeline function": "タイムライン機能",
+    "Code Highlight": "コードハイライト",
+    "Theme": "テーマ",
+    "subpage_display": "配下ページのタイムラインを表示できます。",
+    "performance_decrease": "配下ページが多い場合はページロード時のパフォーマンスが落ちます。",
+    "list_page_display": "無効化することでリストページの表示を高速化できます。",
+    "tab_switch": "タブ変更をブラウザ履歴に保存",
+    "save_edit": "編集タブやヒストリータブ等の切り替えをブラウザ履歴に保存し、ブラウザの戻る/進む操作の対象にします。",
+    "by_invalidating": "無効化することで、ページ遷移のみを戻る/進む操作の対象にすることができます。",
+    "Custom CSS": "カスタム CSS",
+    "write_CSS": " システム全体に適用されるCSSを記述できます。",
+    "reflect_change": "変更の反映はページの更新が必要です。",
+    "ctrl_space": "Ctrl+Space でコード補完",
+    "Custom script": "カスタムスクリプト",
+    "write_java": "システム全体に適用されるJavaScriptを記述できます。"
 
- },
+  },
 
-     "user_management": {
-        "User management": "ユーザー管理",
-        "invite_users": "新規ユーザーの招待",
-        "external_account": "外部アカウントの管理",
-        "user_list": "ユーザー一覧",
-        "Date created": "作成日",
-        "Last login": "最終ログイン",
-        "Manage": "操作",
-        "Edit menu": "編集メニュー",
-        "Reissue password": "パスワードの再発行",
-        "Status":"ステータス",
-        "Deactivate account":"アカウント停止",
-        "your_own":"自分自身のアカウントを停止することはできません",
-        "Administrator menu":"管理者メニュー",
-        "cannot_remove":"自分自身を管理者から外すことはできません"
+  "user_management": {
+    "User management": "ユーザー管理",
+    "invite_users": "新規ユーザーの招待",
+    "external_account": "外部アカウントの管理",
+    "user_list": "ユーザー一覧",
+    "Date created": "作成日",
+    "Last login": "最終ログイン",
+    "Manage": "操作",
+    "Edit menu": "編集メニュー",
+    "Reissue password": "パスワードの再発行",
+    "Status": "ステータス",
+    "Deactivate account": "アカウント停止",
+    "your_own": "自分自身のアカウントを停止することはできません",
+    "Administrator menu": "管理者メニュー",
+    "cannot_remove": "自分自身を管理者から外すことはできません"
+  }
 
-
-
-
-
-
-      }
 }
 

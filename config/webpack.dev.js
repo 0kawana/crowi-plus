@@ -13,6 +13,7 @@ const commonConfig = require('./webpack.common.js');
  * Webpack Plugins
  */
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -51,6 +52,8 @@ module.exports = function (options) {
     },
     plugins: [
 
+      new ExtractTextPlugin('[name].bundle.css'),
+
       new DllBundlesPlugin({
         bundles: {
           vendor: [
@@ -60,7 +63,7 @@ module.exports = function (options) {
         },
         dllDir: helpers.root('public/dll'),
         webpackConfig: webpackMergeDll(commonConfig({env: ENV}), {
-          devtool: 'cheap-module-source-map',
+          devtool: undefined,
           plugins: [],
         })
       }),

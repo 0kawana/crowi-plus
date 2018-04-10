@@ -11,6 +11,7 @@ const commonConfig = require('./webpack.common.js'); // the settings that are co
  * Webpack Plugins
  */
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const OptimizeJsPlugin = require('optimize-js-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -25,7 +26,7 @@ const PORT = process.env.PORT || 3000;
 
 module.exports = function (env) {
   return webpackMerge(commonConfig({ env: ENV }), {
-    devtool: 'source-map',
+    devtool: undefined,
     output: {
       path: helpers.root('public/js'),
       publicPath: '/js/',
@@ -44,6 +45,8 @@ module.exports = function (env) {
           NODE_ENV: JSON.stringify(ENV),
         }
       }),
+
+      new ExtractTextPlugin('[name].[contenthash].css'),
 
       new OptimizeJsPlugin({
         sourceMap: false

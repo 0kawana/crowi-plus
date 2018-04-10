@@ -23,7 +23,7 @@ export default class Modal extends React.Component {
 
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h4 class="modal-title">Rename page</h4>
+              <div class="modal-title">Rename page</div>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -38,11 +38,11 @@ export default class Modal extends React.Component {
                   </div>
                 </div>
                 <div class="checkbox">
-                   <label>
-                     <input name="create_redirect" value="1" type="checkbox"> Redirect
-                   </label>
-                   <p class="help-block"> Redirect to new page if someone accesses <code>/user/sotarok/memo/2017/04/24</code>
-                   </p>
+                  <input name="create_redirect" id="cbRedirect" value="1" type="checkbox">
+                  <label for="cbRedirect">Redirect</label>
+                  <p class="help-block">
+                  Redirect to new page if someone accesses <code>/user/sotarok/memo/2017/04/24</code>
+                  </p>
                 </div>
 
 

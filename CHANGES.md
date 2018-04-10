@@ -1,11 +1,58 @@
 CHANGES
 ========
 
-## 2.4.3-RC
+## 3.0.3-RC
 
-* 
+* Fix: Login page is broken in iOS
+* Fix: Hide presentation tab if portal page
+* Fix: A few checkboxes doesn't work
+    * Invite user check with email in `/admin/user`
+    * Recursively check in rename modal
+    * Redirect check in rename modal
+* Fix: Activating invited user form url is wrong
+* Support: Use postcss-loader and autoprefixer
 
+## 3.0.2
 
+* Feature: Group Access Control List
+* Feature: Add site theme selector
+* Feature: Add a control to switch whether email shown or hidden by user
+* Feature: Custom title tag content
+* Fix: bosai version
+* Support: Rename to GROWI
+* Support: Add dark theme
+* Support: Refreshing bootstrap theme and icons
+* Support: Use Browsersync instead of easy-livereload
+* Support: Upgrade libs
+    * react-bootstrap
+    * react-bootstrap-typeahead
+    * react-clipboard.js
+
+## 3.0.1 (Missing number)
+
+## 3.0.0 (Missing number)
+
+## 2.4.4
+
+* Feature: Autoformat Markdown Table
+* Feature: highlight.js Theme Selector
+* Fix: The bug of updating numbering list by codemirror
+* Fix: Template LangProcessor doesn't work
+    * Introduced by 2.4.0
+* Support: Apply ESLint
+* Support: Upgrade libs
+    * react, react-dom
+    * codemirror, react-codemirror2
+
+## 2.4.3
+
+* Improvement: i18n in `/admin`
+* Improvement: Add `SESSION_NAME` environment variable
+* Fix: All Elements are cleared when the Check All button in DeletionMode
+* Support: Upgrade libs
+    * uglifycss
+    * sinon-chai
+    
 ## 2.4.2
 
 * Improvement: Ensure to set absolute url from root when attaching files when `FILE_UPLOAD=local`
